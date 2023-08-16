@@ -1,0 +1,47 @@
+<div class="accordion-item mt-3">
+    <h2 class="accordion-header" id="experience-heading-{{ experience.pk }}">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#experience-collapse-{{ experience.pk }}" aria-expanded="false"
+                aria-controls="experience-collapse-{{ experience.pk }}">
+            <h2 class="text-start mb-0">{{ experience.title }}</h2>
+        </button>
+    </h2>
+    <div id="experience-collapse-{{ experience.pk }}" class="accordion-collapse collapse"
+         aria-labelledby="experience-heading-{{ experience.pk }}"
+         data-bs-parent="{{ accordion_id }}">
+        <div class="accordion-body">
+            {% if experience.company_url %}
+                <div class="d-flex align-items-center mt-2">
+                    {% include 'landing/icons/link.html' %}
+                    <a class="h5 ms-1 mb-0 text-start cv_title text-decoration-none"
+                       href="{{ experience.company_url }}">{{ experience.company }}</a>
+                </div>
+            {% else %}
+                <h5 class="text-start cv_title mb-0 mt-2">{{ experience.company }}</h5>
+            {% endif %}
+            <div class="d-flex align-items-center mt-3">
+                <div class="d-flex align-items-center">
+                    {% include 'landing/icons/calendar.html' with icon_color='#212529bf' %}
+                    <p class="text-start text-body-secondary mb-0 ms-2 h6">{{ experience.started|date:"F Y" }}
+                        — {% if experience.ended %}
+                            {{ experience.ended|date:"F Y" }}
+                        {% else %}
+                            Present
+                        {% endif %}
+                    </p>
+                </div>
+                <div class="d-flex align-items-center ms-3">
+                    {% include 'landing/icons/location.html' with icon_color='#212529bf' %}
+                    <p class="text-start text-body-secondary mb-0 ms-1 h6">{{ experience.location }}</p>
+                </div>
+            </div>
+            <ul class="mt-3">
+                {% for duty in experience.duties.all %}
+                    <li>
+                        <p class="text-start text-body-secondary mb-0 ms-2 h6">{{ duty.title }}</p>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>

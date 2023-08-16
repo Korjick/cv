@@ -1,0 +1,14 @@
+{% load thumbnail %}
+<li class="d-flex list-group-item">
+    {% if item.image %}
+        {% thumbnail item.image "60x60" crop="center" as im %}
+            <a href="{{ item.image.url }}">
+                <img class="img-thumbnail rounded-circle" src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+            </a>
+        {% endthumbnail %}
+    {% endif %}
+    <div class="{% if item.image %}ms-3{% else %}ms-0{% endif %}">
+        <h5 class="text-start mb-0 text-body-secondary">{{ item.title }}{% block title_cont %}{% endblock %}</h5>
+        {% block descr %}{% endblock %}
+    </div>
+</li>

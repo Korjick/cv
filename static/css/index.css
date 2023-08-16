@@ -1,0 +1,15 @@
+.cv_title {
+    color: #4b0082;
+}
+
+.cv_title_line {
+    background-color: #4b0082;
+}
+
+.dotted_line {
+  border-bottom: 1px dotted #212529bf;
+}
+
+.rounded-skill {
+    color: #212529bf !important;
+}

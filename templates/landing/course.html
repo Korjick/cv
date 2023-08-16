@@ -1,0 +1,14 @@
+{% extends 'landing/base_list_item.html' %}
+{% block title_cont %} — <a class="text-body-secondary" href="{{ item.institution_url }}">{{ item.institution }}</a>{% endblock %}
+{% block descr %}
+    <div class="d-flex align-items-center mt-3">
+        {% include 'landing/icons/calendar.html' with icon_color='#212529bf' %}
+        <p class="text-start text-body-secondary mb-0 ms-2 h6">{{ item.started|date:"F Y" }}
+            — {% if item.ended %}
+                {{ item.ended|date:"F Y" }}
+            {% else %}
+                Present
+            {% endif %}
+        </p>
+    </div>
+{% endblock %}

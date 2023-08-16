@@ -1,0 +1,6 @@
+<div class="mb-3">
+    <p class="h5 text-start">{{ referee.title }}</p>
+    <p class="text-body-secondary text-start">{{ referee.job_title }}</p>
+    {% include 'landing/link_item.html' with icon_variable="landing/icons/at.html" ref='mailto:'|add:referee.email ref_text=referee.email only %}
+    {% include 'landing/link_item.html' with icon_variable="landing/icons/location.html" ref="#" ref_text=referee.address only %}
+</div>

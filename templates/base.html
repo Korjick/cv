@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+{% block head %}
+    <head>
+        {% include 'base_meta.html' %}
+        <title>
+            {% block title %}  {% endblock %}
+        </title>
+    </head>
+{% endblock %}
+<body>
+{% block content %}  {% endblock %}
+</body>
+</html>
