@@ -13,3 +13,11 @@
 .rounded-skill {
     color: #212529bf !important;
 }
+
+.profile-image {
+    min-width: 120px;
+}
+
+.small-image {
+    min-width: 60px;
+}

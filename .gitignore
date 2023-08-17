@@ -10,6 +10,10 @@ __pycache__/
 .idea
 *.iml
 
+# SSH
+*.pem
+conf/
+
 # Distribution / packaging
 .Python
 build/

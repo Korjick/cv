@@ -3,7 +3,7 @@
     {% if item.image %}
         {% thumbnail item.image "60x60" crop="center" as im %}
             <a href="{{ item.image.url }}">
-                <img class="img-thumbnail rounded-circle" src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+                <img class="img-thumbnail rounded-circle small-image" src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
             </a>
         {% endthumbnail %}
     {% endif %}

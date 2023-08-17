@@ -1,8 +1,10 @@
 from django.shortcuts import render
+from django.views.decorators.cache import cache_page
 
 from .models import Experience, Education, SoftSkill, HardSkill, Language, Course, Proud, Referee
 
 
+@cache_page(60 * 60)
 def index(request):
     experiences = Experience.objects.order_by('-started')
     educations = Education.objects.order_by('-started')
